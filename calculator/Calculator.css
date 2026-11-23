@@ -1,79 +1,94 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-
 }
-.container{
-    width: 90%;
-    height: 100vh;
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
     background: beige;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
-}
-h3{
-    color: aquamarine;
-    text-align: center;
-    justify-content: center;
-    font-size: larger;
-    font-weight: 800;
-    font-size: 30px;
-}
-.calculator{
+.calculator {
+    width: min(100%, 360px);
     background-color: rgb(26, 25, 23);
-    padding: 10PX;
-    border-radius: 10PX;
-
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
-.calculator form input{
-    border:0;
-    outline:0;
-    width: 60px;
+
+.calculator form input {
+    border: 0;
+    outline: 0;
+    width:  min(19%, 60px);
     height: 60px;
     border-radius: 10px;
-    box-shadow: 3px 3px 3px 4px  rgba(255,255,255,0.5);
+    box-shadow: 2px 3px 5px rgba(255, 255, 255, 0.25);
     background: rgb(235, 240, 227);
-    color: black;
-    font-size: 27px;
+    color: #111;
+    font-size: 24px;
     font-weight: 700;
-    margin: 9px;
-    padding: 12px;
+    margin: 1.5%;
     cursor: pointer;
 }
 
-form .display{
+form .display {
     display: flex;
     justify-content: flex-end;
-    margin: 10px 0;
-   
-    
+    margin: 8px 0 14px;
 }
-form .display input{
+
+form .display input {
+    width: 100%;
     text-align: right;
-    flex: 1;
-    font-size: 49px;
+    padding: 12px;
+    font-size: 38px;
     background-color: rgba(157, 168, 106, 0.947);
-    box-shadow: 3px 4px 6px rgba(184, 48, 132, 0.7);
-    color: black;
-    outline: none;
+    color: #111;
+    cursor: text;
+}
 
+form input.equal {
+    width: 44%;
+    color: #fff;
+    background-color: #628d24;
+    font-size: 30px;
 }
-form input.equal{
-    width: 145px;
-    color: rgb(143, 105, 105);
-    background-color: rgb(175, 210, 110);
-    font-size: xx-large;
-}
-form input.operation{
-   color: rgb(216, 116, 16);
-}
-form input.operater{
-    color:#07c9de;
-    font-size: 40px;
-   text-align: center;
-   justify-content: center;
 
+form input.operation {
+    color: #d87410;
+}
+
+form input.operater {
+    color: #079bad;
+    font-size: 32px;
+}
+
+.calculator form input:active {
+    transform: scale(0.96);
+}
+
+@media (max-width: 380px) {
+    .calculator {
+        padding: 10px;
+    }
+
+    .calculator form input {
+        height: 54px;
+        font-size: 21px;
+    }
+
+    form .display input {
+        font-size: 32px;
+    }
 }
